@@ -11,30 +11,68 @@ $(document).ready(function () {
     });
 
     $('#saveBtn').on('click', event => {
+
         let rows = $('.selected')
         console.log(rows)
+        let names = []
         $.each(rows, function(index, value){
 
             let name = value.children.item(0).innerHTML
             let age = value.children.item(1).innerHTML
             let email = value.children.item(2).innerHTML
             result.users.push({name, age, email})
+            names.push(name);
         });
 
-        $.ajax({
-            type: "POST",
-            url: window.location + "/add",
-            contentType: "application/json",
-            data: JSON.stringify(result),
-            dataType: '"json"',
-            success : function (result){
-                if(result.status === "success"){
-                    console.log("success")
+        $.confirm({
+            title: 'Are you sure you want to save this data?',
+            content: names.join('\r\n'),
+            buttons: {
+                confirm: function () {
+
+                    $.ajax({
+                        type: "POST",
+                        url: window.location + "/add",
+                        contentType: "application/json",
+                        data: JSON.stringify(result),
+                        dataType: '"json"',
+                        success : function (result){
+                            if(result.status === "success"){
+                                console.log("success")
+                            }
+                        }
+
+                    })
+                },
+                cancel: function () {
+                    $.alert('Canceled!');
+                },
+                somethingElse: {
+                    text: 'Something else',
+                    btnClass: 'btn-blue',
+                    keys: ['enter', 'shift'],
+                    action: function(){
+                        $.alert('Something else?');
+                    }
                 }
             }
+        });
 
-        })
-        location.reload()
+
+        // $.ajax({
+        //     type: "POST",
+        //     url: window.location + "/add",
+        //     contentType: "application/json",
+        //     data: JSON.stringify(result),
+        //     dataType: '"json"',
+        //     success : function (result){
+        //         if(result.status === "success"){
+        //             console.log("success")
+        //         }
+        //     }
+        //
+        // })
+        // location.reload()
     });
 
     $('#table_id tbody tr').on('click', (event=>{
