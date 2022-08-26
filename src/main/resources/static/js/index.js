@@ -12,29 +12,35 @@ $(document).ready(function () {
 
     $('#saveBtn').on('click', event => {
         let rows = $('.selected')
-        console.log(rows)
+
         $.each(rows, function(index, value){
 
             let name = value.children.item(0).innerHTML
             let age = value.children.item(1).innerHTML
             let email = value.children.item(2).innerHTML
+            let hiddenInput = value.children.item(3).innerHTML
+            let input = value.children.item(3)
+            input.setAttribute('value', name)
+            console.log(input)
+
+
             result.users.push({name, age, email})
         });
 
-        $.ajax({
-            type: "POST",
-            url: window.location + "/add",
-            contentType: "application/json",
-            data: JSON.stringify(result),
-            dataType: '"json"',
-            success : function (result){
-                if(result.status === "success"){
-                    console.log("success")
-                }
-            }
+        // $.ajax({
+        //     type: "POST",
+        //     url: window.location + "/add",
+        //     contentType: "application/json",
+        //     data: JSON.stringify(result),
+        //     dataType: 'json',
+        //     success : function (result){
+        //         if(result.status === "success"){
+        //             console.log("success")
+        //         }
+        //     }
+        //
+        // })
 
-        })
-        location.reload()
     });
 
     $('#table_id tbody tr').on('click', (event=>{

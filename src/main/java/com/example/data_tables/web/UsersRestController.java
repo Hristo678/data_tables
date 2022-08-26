@@ -6,15 +6,16 @@ import com.example.data_tables.Entities.User;
 import com.example.data_tables.Repositories.CopyUsersRepository;
 import com.example.data_tables.Repositories.UserRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Logger;
 
-@RestController
+@Controller
 public class UsersRestController {
 
     private UserRepository userRepository;
@@ -25,14 +26,27 @@ public class UsersRestController {
         this.copyUsersRepository = copyUsersRepository;
     }
 
-    @PostMapping("/users/add")
-    public ResponseEntity<CopyUsersBindingModel> addUser(@RequestBody CopyUsersBindingModel users){
-
-        List<CopyUser> listUsers = users.getUsers();
-        listUsers.forEach(u -> {
-            u.setDataOfCopy(LocalDate.now());
-            copyUsersRepository.save(u);
-        });
-        return ResponseEntity.ok(users);
+    @GetMapping
+    public String test(){
+        return "index";
     }
+
+//    @PostMapping("/users/add")
+//    public String addUser(@RequestParam(value = "selected") String selected){
+//        System.out.println();
+//
+////        listUsers.forEach(u -> {
+////            u.setDataOfCopy(LocalDate.now());
+////            copyUsersRepository.save(u);
+////        });
+//
+//        System.out.println("Invo");
+//
+//        return "redirect:/";
+//    }
+
+//    @ModelAttribute
+//    public CopyUsersBindingModel copyUsersBindingModel() {
+//        return new CopyUsersBindingModel();
+//    }
 }

@@ -36,26 +36,31 @@
     <title>Document</title>
 </head>
 <body>
+<form th:action="@{/users/add}" th:method="POST"  th:object="${form}">
 <table id="table_id" class="display">
 
     <thead>
     <tr>
+
         <th>Name</th>
         <th>Age</th>
         <th>Email</th>
     </tr>
     </thead>
     <tbody>
-    <tr  th:each="u : ${users}">
+
+    <tr  th:each="u: ${users}">
         <td th:text="${u.name}" th:value="${u.name}">Row 1 Data 1</td>
-        <td th:text="${u.age}" th:value="${u.age}">Row 1 Data 2</td>
-        <td th:text="${u.email}" th:value="${u.email}">Row 1 Data 2</td>
+        <td th:text="${u.age}" th:value="${u.age}" >Row 1 Data 2</td>
+        <td th:text="${u.email}" th:value="${u.email}" th:name="email">Row 1 Data 2</td>
+        <input type="hidden" value="no name" name="name">
     </tr>
     </tbody>
 </table>
 
-<button class="ui-button" id="saveBtn">Save selected users</button>
+<input type="submit" class="ui-button" id="saveBtn">Save selected users</input>
 
+</form>
 </body>
 
 <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">-->
