@@ -25,7 +25,9 @@ public class HomeController {
         System.out.println("NotMasterBranch2");
         System.out.println("NotMasterBranch2");
         String test4 = "test";
-        char test3 = '1';
+        char finalTest = '1';
+        char finalTest2 = '1';
+
         model.addAttribute("users", userRepository.findAll());
         return "users";
     }
