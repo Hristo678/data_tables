@@ -30,7 +30,7 @@ public class UsersRestController {
     public String test(){
         return "index";
     }
-
+    String test = "test";
 //    @PostMapping("/users/add")
 //    public String addUser(@RequestParam(value = "selected") String selected){
 //        System.out.println();
