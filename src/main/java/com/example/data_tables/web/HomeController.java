@@ -19,11 +19,13 @@ public class HomeController {
     @GetMapping("users")
     public String home(Model model){
         System.out.println("NotMasterBranch");
-        String secondTest = "testtt";
+        String secondTest4 = "testtt2222";
+        System.out.println("NotMasterBranch3");
+        System.out.println("NotMasterBranch4");
         System.out.println("NotMasterBranch2");
         System.out.println("NotMasterBranch2");
-        String test = "test";
-        char test2 = '1';
+        String test4 = "test";
+        char test3 = '1';
         model.addAttribute("users", userRepository.findAll());
         return "users";
     }
@@ -34,7 +36,7 @@ public class HomeController {
 
 
         System.out.println("Invo");
-
+        String seeIfItsAdded = "testIfAdded it";
         return "redirect:/";
     }
 
