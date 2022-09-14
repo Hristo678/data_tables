@@ -27,6 +27,7 @@ public class HomeController {
         String test4 = "test";
         char finalTest = '1';
         char finalTest2 = '1';
+        char finalTest3 = '1';
 
         model.addAttribute("users", userRepository.findAll());
         return "users";
