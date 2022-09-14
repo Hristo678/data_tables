@@ -19,12 +19,17 @@ public class HomeController {
     @GetMapping("users")
     public String home(Model model){
 
-        System.out.println("NotMasterBranch1");
-        String first = "tedasdasttt";
-        System.out.println("NotMasterBranch1");
-        System.out.println("NotMasterBranch1");
-        String test = "test";
-        char test1 = '1';
+        System.out.println("NotMasterBranch");
+        String secondTest4 = "testtt2222";
+        System.out.println("NotMasterBranch3");
+        System.out.println("NotMasterBranch4");
+        System.out.println("NotMasterBranch2");
+        System.out.println("NotMasterBranch2");
+        String test4 = "test";
+        char finalTest = '1';
+        char finalTest2 = '1';
+        char finalTest3 = '1';
+
 
         model.addAttribute("users", userRepository.findAll());
         System.out.println("NotMasterBranch");
