@@ -19,6 +19,9 @@ public class HomeController {
     @GetMapping("users")
     public String home(Model model){
         System.out.println("NotMasterBranch");
+        System.out.println("NotMasterBranch2");
+        System.out.println("NotMasterBranch2");
+        String test = "test";
         model.addAttribute("users", userRepository.findAll());
         return "users";
     }
