@@ -17,6 +17,8 @@ public class HomeController {
     @GetMapping("users")
     public String home(Model model){
         model.addAttribute("users", userRepository.findAll());
+        System.out.println("Master");
+        System.out.println("Master2");
         return "users";
     }
 
