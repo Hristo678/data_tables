@@ -35,6 +35,7 @@ public class UsersRestController {
     String newInDevelop = "newInDevelop";
     String newInDevelop2 = "newInDevelop2";
     String test2 = "test2";
+    String newTest = "newTEst";
 
 //    @PostMapping("/users/add")
 //    public String addUser(@RequestParam(value = "selected") String selected){
