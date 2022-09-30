@@ -31,6 +31,9 @@ public class UsersRestController {
         return "index";
     }
     String test = "test";
+    String newInTest = "newInTest";
+    String newInTest2 = "newInTest2";
+    String newInTest3 = "newInTest3";
 //    @PostMapping("/users/add")
 //    public String addUser(@RequestParam(value = "selected") String selected){
 //        System.out.println();
