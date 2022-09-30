@@ -25,6 +25,7 @@ public class HomeController {
         System.out.println("NotMasterBranch4");
         System.out.println("NotMasterBranch2");
         System.out.println("NotMasterBranch2");
+        System.out.println("test2");
         String test4 = "test";
         char finalTest = '1';
         char finalTest2 = '1';
